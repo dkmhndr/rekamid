@@ -5,7 +5,6 @@ class Crud_kamera extends CI_Model
     private $_table = "kamera";
     private $_sewa = "sewa";
 
-    public $id_kamera;
     public $merk;
     public $tipe;
     public $harga;
@@ -51,7 +50,6 @@ class Crud_kamera extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_kamera = "";
         $this->merk = $post["merk"];
         $this->tipe = $post["tipe"];
         $this->harga = $post["harga"];
@@ -66,6 +64,7 @@ class Crud_kamera extends CI_Model
         $this->id_kamera = $post["id"];
         $this->merk = $post["merk"];
         $this->tipe = $post["tipe"];
+        $this->status = "Tersedia";
         $this->harga = $post["harga"];
         if (!empty($_FILES["image"]["name"])) {
             $this->gambar = $this->_uploadImage();
@@ -81,13 +80,12 @@ class Crud_kamera extends CI_Model
     }
 
     private function _uploadImage(){
+
     $config['upload_path']          = './upload/product/';
     $config['allowed_types']        = 'gif|jpg|png';
-    $config['file_name']            = $this->id_kamera;
+    $config['file_name']            = $this->tipe;
     $config['overwrite']			= true;
-    $config['max_size']             = 4096; // 1MB
-    // $config['max_width']            = 1024;
-    // $config['max_height']           = 768;
+    $config['max_size']             = 1024; // 1MB
 
     $this->load->library('upload', $config);
 

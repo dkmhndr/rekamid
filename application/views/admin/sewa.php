@@ -53,12 +53,14 @@
 											<?php echo 'Rp '.number_format($daftar->pendapatan, 0, ".", ".") ?>
 										</td>
 										<td>
+											<?php if($daftar->status !== "Selesai"){?>
 											<a href="<?php echo site_url('penyewaan/edit/'.$daftar->id_sewa) ?>"
 											 class="btn btn-info btn-icon-split"><i class="fas fa-edit"></i></a>
 											<a href="http://wa.me/<?= $daftar->nohpklien; ?>" target="_blank"
 											 class="btn btn-info btn-icon-split"><i class="fas fa-comment"></i></a>
 											<a onclick="deleteConfirm('<?php echo site_url('penyewaan/delete/'.$daftar->id_sewa) ?>')"
 											 href="#!" class="btn btn-success btn-icon-split"><i class="fas fa-check"></i></a>
+											<?php }?>
 										</td>
 									</tr>
 									<?php endforeach; ?>

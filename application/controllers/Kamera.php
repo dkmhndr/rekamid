@@ -44,6 +44,7 @@ class Kamera extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $kamera = $this->crud_kamera;
         $validation = $this->form_validation;
+        $validation->set_rules($kamera->rules());
 
         if ($validation->run()) {
             $kamera->save();

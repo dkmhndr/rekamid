@@ -5,7 +5,6 @@ class Crud_penyewaan extends CI_Model
     private $_table = "sewa";
     private $_kamera = "kamera";
 
-    public $id_sewa;
     public $id_kam;
     public $tglsewa;
     public $tglkembali;
@@ -55,7 +54,6 @@ class Crud_penyewaan extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_sewa = "";
         $this->id_kam = $post["kamera"];
         $this->tglsewa = $post["tglsewa"];
         $this->tglkembali = $post["tglkembali"];
@@ -77,7 +75,6 @@ class Crud_penyewaan extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->id_sewa = "";
         $this->id_kam = $post["kamera"];
         $this->tglsewa = $post["tglsewa"];
         $this->tglkembali = $post["tglkembali"];
