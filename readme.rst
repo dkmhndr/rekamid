@@ -8,9 +8,9 @@ Oleh: Dika Mahendra (6437/XII RA)
 *******************
 Server Requirements
 *******************
-
 1.PHP version 5.6 or newer is recommended.
 2.MySQL including PHPMyAdmin
+
 
 ************
 Installation
